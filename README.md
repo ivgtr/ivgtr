@@ -7,5 +7,5 @@
   - α版 **公開中**
 
 - [vue-shuffle-text](https://github.com/ivgtr/vue-shuffle-text)
-  - **公開中**
+  - [npmjs](https://www.npmjs.com/package/vue-shuffle-text) **公開中**
 
