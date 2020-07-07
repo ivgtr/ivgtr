@@ -7,9 +7,9 @@ We're Geeks who consume content.
 ## :whale:commit
 | | |
 ----|---- 
-| [irotoridori](https://ivgtr.me) | 公開中 / 更新停止 |
-| [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle) | 公開中 / 更新停止 |
-| [vue-shuffle-text](https://www.npmjs.com/package/vue-shuffle-text) | 公開中 / 更新停止 |
+| [irotoridori](https://ivgtr.me) | [公開中](https://github.com/ivgtr/irotoridori) / 更新中 |
+| [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle) | [公開中](https://github.com/ivgtr/discord-squad-shuffle) / 更新停止 |
+| [vue-shuffle-text](https://www.npmjs.com/package/vue-shuffle-text) | [公開中](https://github.com/ivgtr/vue-shuffle-text) / 更新停止 |
 
 
 
