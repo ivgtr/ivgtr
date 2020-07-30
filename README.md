@@ -7,13 +7,13 @@ We're Geeks who consume content. :whale:
 
 <div>
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img align="left" src="https://github-readme-stats.vercel.app/api?username=ivgtr&hide=stars&show_icons=true&count_private=true&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api?username=ivgtr&hide=stars&show_icons=true&count_private=true&theme=tokyonight" />
   </a>
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
   </a>
 </div>
-<br clear="left">
+<br clear="center">
   
   
 _Updated 30/07/2020_
