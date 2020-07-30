@@ -2,15 +2,14 @@
  
 [![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/ivgtr/ivgtr) 
  
-We're Geeks who consume content.
 
-## :whale:commit
-| | |
-----|---- 
-| [irotoridori](https://ivgtr.me) | [公開中](https://github.com/ivgtr/irotoridori) / 更新中 |
-| [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle) | [公開中](https://github.com/ivgtr/discord-squad-shuffle) / 更新停止 |
-| [vue-shuffle-text](https://www.npmjs.com/package/vue-shuffle-text) | [公開中](https://github.com/ivgtr/vue-shuffle-text) / 更新停止 |
+We're Geeks who consume content. :whale: 
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="left" src="https://github-readme-stats.vercel.app/api?username=ivgtr&hide=stars&show_icons=true&count_private=true&theme=tokyonight" />
+</a>
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
+</a>
 
 
-
-_Updated 08/07/2020_
+_Updated 30/07/2020_
