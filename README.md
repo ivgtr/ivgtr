@@ -10,6 +10,6 @@ We're Geeks who consume content. :whale:
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
 </a>
-
-
+  
+  
 _Updated 30/07/2020_
