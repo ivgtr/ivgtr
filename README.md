@@ -13,6 +13,7 @@ We're Geeks who consume content. :whale:
     <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
   </a>
 </div>
+<br clear="left">
   
   
 _Updated 30/07/2020_
