@@ -7,11 +7,11 @@ We're Geeks who consume content. 🐳
 <div>
   <a href="github-readme-stats-inky-ten.vercel.app
 ">
-    <img align="center" src="https://github-readme-stats.vercel.app/api?username=ivgtr&hide=stars&show_icons=true&count_private=true&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats-inky-ten.vercel.app/api?username=ivgtr&hide=stars&show_icons=true&count_private=true&theme=tokyonight" />
   </a>
   <a href="github-readme-stats-inky-ten.vercel.app
 ">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats-inky-ten.vercel.app/api/top-langs/?username=ivgtr&layout=compact&theme=tokyonight" />
   </a>
 </div>  
 <br />
