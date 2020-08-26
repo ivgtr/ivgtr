@@ -18,15 +18,15 @@ We're Geeks who consume content. 🐳
 <br />
 
 ## :fire: Active
-- [twcl (cliでTwitterをするやつ)](https://github.com/ivgtr/twcl)
+- [twcl (cliでTwitterをするやつ)](https://github.com/ivgtr/twcl)  
 cliでTwitterをする為のツール
 
 ## :ice_cream: Archive
-- [irotoridori](https://github.com/ivgtr/irotoridori)
+- [irotoridori](https://github.com/ivgtr/irotoridori)  
 profile/portfolioサイト
-- [vue-shuffle-text](https://github.com/ivgtr/vue-shuffle-text)
+- [vue-shuffle-text](https://github.com/ivgtr/vue-shuffle-text)  
 vueでテキストをシャッフルするだけのplugin
-- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle)
+- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle)  
 ボイスチャンネル参加者をシャッフルして表示するbot  
 herokuの無料枠を他で使いたいのでbotの公開は終了予定
 
