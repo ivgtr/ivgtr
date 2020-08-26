@@ -1,6 +1,6 @@
 # @iVgtr  
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/mawaru_hana?style=social)](https://twitter.com/mawaru_hana) [![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/ivgtr/ivgtr) 
+[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/ivgtr/ivgtr) 
 
 We're Geeks who consume content. 🐳
 
@@ -16,6 +16,20 @@ We're Geeks who consume content. 🐳
 </div>  
 <br />
 <br />
+
+## :fire: Active
+- [twcl (cliでTwitterをするやつ)](https://github.com/ivgtr/twcl)
+cliでTwitterをする為のツール
+
+## :ice_cream: Archive
+- [irotoridori](https://github.com/ivgtr/irotoridori)
+profile/portfolioサイト
+- [vue-shuffle-text](https://github.com/ivgtr/vue-shuffle-text)
+vueでテキストをシャッフルするだけのplugin
+- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle)
+ボイスチャンネル参加者をシャッフルして表示するbot  
+herokuの無料枠を他で使いたいのでbotの公開は終了予定
+
 <p align="right">
-  <em>Updated 30/07/2020</em>
+  <em>Updated 26/08/2020</em>
 </p>
