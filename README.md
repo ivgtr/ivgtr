@@ -16,10 +16,9 @@ cliでTwitterをする為のツール
 profile/portfolioサイト
 - [vue-shuffle-text](https://github.com/ivgtr/vue-shuffle-text)  
 vueでテキストをシャッフルするだけのplugin
-- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle)  
+- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle) (公開は終了)  
 ボイスチャンネル参加者をシャッフルして表示するbot  
-_herokuの無料枠を他で使いたいのでbotの公開は終了予定_
 
 <p align="right">
-  <em>Updated 27/08/2020</em>
+  <em>Updated 07/09/2020</em>
 </p>
