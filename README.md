@@ -1,6 +1,6 @@
 # @iVgtr  
 
-[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/ivgtr/ivgtr) [![Donate](https://img.shields.io/badge/%EF%BC%84-support-green.svg?style=flat-square)](https://amz.run/3WX9)
+[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/ivgtr/ivgtr) [![Donate](https://img.shields.io/badge/%EF%BC%84-support-green.svg?style=flat-square)](https://www.buymeacoffee.com/ivgtr)
 
 We're Geeks who consume content. 🐳
 
@@ -10,17 +10,17 @@ We're Geeks who consume content. 🐳
 ## :fire: Active
 - [twcl (cliでTwitterをするやつ)](https://github.com/ivgtr/twcl)  
 cliでTwitterをする為のツール
-- [PokéColor](https://github.com/ivgtr/poke-color)  
-カラーコード図鑑サイト
 
 ## :ice_cream: Archive
+- [PokéColor](https://github.com/ivgtr/poke-color)  
+カラーコードで見る某図鑑サイト
 - [irotoridori](https://github.com/ivgtr/irotoridori)  
-profile/portfolioサイト
+profileサイト
 - [vue-shuffle-text](https://github.com/ivgtr/vue-shuffle-text)  
 vueでテキストをシャッフルするだけのplugin
-- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle) (公開は終了)  
+- [discord-squad-shuffle](https://github.com/ivgtr/discord-squad-shuffle) (公開終了)  
 ボイスチャンネル参加者をシャッフルして表示するbot  
 
 <p align="right">
-  <em>Updated 07/09/2020</em>
+  <em>Updated 10/10/2020</em>
 </p>
