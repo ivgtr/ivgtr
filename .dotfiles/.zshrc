@@ -1,13 +1,18 @@
+# PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=/usr/local/git/bin:$PATH
+
 # npm
 alias n='npm'
 alias nls='npm ls -g --depth=0'
 alias y='yarn'
+alias y add -g='npm i -g'
 
 # git
 alias gitignore="touch .gitignore && gibo dump Node VisualStudioCode macOS >> .gitignore"
 alias g='git'
-alias gcom='gitmoji -c'
-alias gpush='git push'
+alias gmc='gitmoji -c'
+alias gp='git push'
 alias gre='git reset --soft'
 
 # docker
