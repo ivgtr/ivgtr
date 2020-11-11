@@ -1,5 +1,6 @@
 # Mac 初期設定
 - 参考:[Mac を買ったら必ずやっておきたい初期設定](https://qiita.com/ucan-lab/items/c1a12c20c878d6fb1e21)
+- 設定を元の記事から自分用に書き換え、その他追加したものです
 
 ## 最初にやること
 
@@ -17,7 +18,11 @@ $ echo $SHELL
 
 zsh でなければ
 ```
-brew install zsh
+$ brew install zsh
+$ sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+$ chsh -s /usr/local/bin/zsh
+$ echo $SHELL
+/bin/zsh
 ```
 
 ### 隠しファイルを表示する
