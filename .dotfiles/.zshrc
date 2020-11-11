@@ -1,5 +1,4 @@
 # PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/git/bin:$PATH
 
 # npm
