@@ -1,224 +1,49 @@
 # Mac 初期設定
-- 参考:[Mac を買ったら必ずやっておきたい初期設定](https://qiita.com/ucan-lab/items/c1a12c20c878d6fb1e21)
-- 設定を元の記事から自分用に書き換え、その他追加したものです
+クリーンインストールの手順は[macOS Catalinaをクリーンインストールする方法](https://qiita.com/PaSeRi/items/59e9785580dbd518ac93)を参考にした  
+PCスペック:MacBook Air (Retina, 13-inch, 2018), メモリ16GB, SSD 256GB, JIS  
 
-## 最初にやること
+#### クリーンインストール後、ひとまずソフトウェア・アップデート
+- `(appleマーク) > このmacについて > ソフトウェアアップデート`  
 
-- ソフトウェア・アップデート
-  - (appleマーク) > このmacについて > ソフトウェアアップデート
-- App Store
-  - (appleマーク) > App Store > すべてアップデート
-
-## シェルの確認
-
+`homebrew`をインストールしようとしたら`xcode`が必要だったのでダウンロード、  
+App storeの`xcode`は不要っぽい(?)のでターミナルより`xcode-select --install`でinstall
+そして`homebrew`のinstall:  
+```sh
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
-$ echo $SHELL
-/bin/zsh
-```
-
-zsh でなければ
-```
-$ brew install zsh
-$ sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
-$ chsh -s /usr/local/bin/zsh
-$ echo $SHELL
-/bin/zsh
-```
-
-### 隠しファイルを表示する
-
-```
-$ defaults write com.apple.finder AppleShowAllFiles -boolean true
-
-# 補足: 元に戻す場合
-$ defaults delete com.apple.finder AppleShowAllFiles
-```
-
-`command` + `shift` + `.` で表示/非表示の切り替えもできます。
-
-### 共有フォルダで .DS_Store ファイルを作成しない
-
-```
-$ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-# 補足: 元に戻す場合
-$ defaults write com.apple.desktopservices DSDontWriteNetworkStores false
-```
-
-## 権限設定
-
-```
+権限設定:  
+```sh
 $ sudo chown -R $(whoami):admin /usr/local/*
 $ sudo chmod -R g+w /usr/local/*
 ```
 
-Homebrewでインストールする際は /usr/local のパーミッションエラー対策。
-追加されたユーザーでHomebrewを実行する時などにパーミッションエラーが起きるので予め権限設定しておく
 
-## Homebrew
-
-- https://brew.sh
-- macOS CLI用のパッケージマネージャー
-- Xcode Command Line Tools
-  - Homebrewを入れるために別途必要でしたが、最近のインストーラは自動的にインストールしてくれます。
-
+#### ここら辺でターミナルの入力しにくさに不快感を覚えるので`zsh`をinstallしていく
+```sh
+$ brew install zsh
+$ sudo echo '/usr/local/bin/zsh' >>  /etc/shells
+$ chsh -s /usr/local/bin/zsh
 ```
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+ターミナルを再起動、`echo $SHELL`でPATHが`zsh`に向いてるか確認  
+起動時に.zshrcがないよ的な事を聞かれるので適当に答える、後述の`zprezto`導入時に存在するとコマンドが通らないのでどうせ消す  
+  
+#### `zsh`を機能拡張したいので`zprezto`を導入する
 ```
-
+$ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
-$ brew -v
-Homebrew 2.2.11
-Homebrew/homebrew-core (git revision 31624; last commit 2020-04-05)
-Homebrew/homebrew-cask (git revision 9372fac; last commit 2020-04-05)
+gitを使っているがデフォルトで入っているはず、入っていなかったら`brew install git`  
+設定ファイルを生成するコマンドを入力(*最初の一行目だけではなく全部入力)  
+```sh
+$ setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 ```
-
-### Homebrew Cask
-
-- https://github.com/Homebrew/homebrew-cask
-- macOS GUI用のパッケージマネージャー
-- 最近の Homebrew をインストールしていれば同梱されている
-
-### Homebrew Update & Upgrade
-
-```
-# Homebrew本体のアップデート
-$ brew update
-
-# Homebrewでインストールしたパッケージのアップデート
-$ brew upgrade
-$ brew cask upgrade
-```
-
-### Homebrew 補足
-
-- [homebrewとは何者か。仕組みについて調べてみた](https://qiita.com/omega999/items/6f65217b81ad3fffe7e6)
-
-```
-# 古いformulaを削除
-$ brew cleanup
-
-# Homebrewの診断
-$ brew doctor
-```
-
-## アニメーションの削除
-- [【決定版】MacOS X 高速化テクニック](https://qiita.com/soushiy/items/b56d4961d54972bc4b9e)
-
-### Dockが表示/非表示になる時間を0.15秒にする
-
-```
-defaults write com.apple.dock autohide-time-modifier -float 0.15;killall Dock
-```
-
-### マウスを画面端に持っていってからDockが表示されるまでの待ち時間を0秒にする
-
-```
-defaults write com.apple.dock autohide-delay -float 0;killall Dock
-```
-
-## Macシステム環境設定
-
-### 一般
-
-- 外観モード > ダーク
-- スクロールバーの表示 > 常に表示
-
-### Dock
-
-- サイズ: 小さめに
-- Dockを自動的に表示 > 表示
-
-### 省エネルギー
-
-- バッテリー
-  - ディスプレイをオフにするまでの時間
-    - 短めに
-  - バッテリー電源使用時はディスプレイを少し暗くする
-    - チェックを外す
-- メニューバーにバッテリーの状況を表示
-  - チェックを入れる
-  - メニューバーの電池マークをクリック「割合(%)を表示」にチェックを入れる
-
-### 日付と時刻
-
-- 時計 
-  - 日付のオプション
-    - 日付を表示にチェックを入れる
-
-### トラックパッド
-
-- クリック 
-    - 弱いに
-
-### キーボード
-
-- キーボード 
-  - Touch Barに表示する項目
-    - F1、F2などのキーを表示
-- ユーザ辞書 
-  - 英字入力中にスペルを自動変換
-    - チェックを外す
-  - スペースバーを2回押してピリオドを入力
-    - チェックを外す
-  - スマート引用符とスマートダッシュを使用
-    - チェックを外す
-
-### セキュリティとプライバシー
-- スリープとスクリーンセーバの解除にパスワードを要求
-  - すぐに
-- ダウンロードしたアプリケーションの実行許可
-    - Mac App Store と確認済みの開発元からのアプリケーションを許可
-- ファイアウォール > ファイアウォールをオン にする
-
-### 共有
-
-- コンピュータ名を変更(AirDropに表示される名前)
-- リモートログイン > 必要になったらチェックを入れる
-
-### Touch ID
-
-- 登録
-- Touch IDを使用 > 全部にチェックを入れる
-
-## Finder
-
-### デスクトップに表示させるアイコン
-
-- 一般
-  - デスクトップに表示させる項目
-    - 接続中のサーバ にチェックを入れる
-
-### ファイルの拡張子を表示する
-
-- 環境設定
-  - 詳細
-    - すべてのファイル名拡張子を表示 にチェックする
-    - 拡張子を変更する前に警告を表示 のチェックを外す
-
-### AirDrop
-
-- このMacを検出可能な相手 > 都度変える
-  - 基本は`連絡先のみ`
-- Bluetooth, Wi-Fiを有効にする。
-
-## Shell
-### Iceberg
-- Terminalのテーマ設定
-- [Iceberg-iTerm2](https://github.com/Arc0re/Iceberg-iTerm2)
-- readmeを見ながらinstall
-
-### prezto
-- zshのframework
-- [prezto](https://github.com/sorin-ionescu/prezto)
-- readmeを見ながらinstall
-  - .zshrc
-    - aliasなどを設定する
-  - .zpreztorc
-    - modulesの部分に書き加える
-```
-# Set the Prezto modules to load (browse modules).
-# The order matters.
+これで`.zshrc`などが生成される  
+`exec $SHELL -l`でターミナルを再起動、コマンドラインの見た目が三本線のカラフルな感じになってたら成功  
+##### modulesを追加する為に`.zpreztorc`を編集  
+modulesっぽいのがズラッと並んでいる所を探し、`'syntax-highlighting`と`'autosuggestions`を追加する  
+```rc:.zpreztorc
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
@@ -228,171 +53,204 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'syntax-highlighting' \
-  'autosuggestions' \
+  'syntax-highlighting' \  # 追加した
+  'autosuggestions' \      # 追加した
   'prompt'
 ```
+  
+`exec $SHELL -l`でターミナルを再起動、コマンドが存在するかで色が付いたりhistoryからコマンドを教えてくれたりする  
 
-## CLI Tool
-### Git
+#### 必要そうなGUIツールをinstallする
+- `homebrew`のアップデートでcaskのインストールコマンドが変わってるので注意
+  - 従来は`brew cask install ○○`だったが、`brew install --cask ○○`になった
+  - 割と最近のアップデートらしい
 
-- Macに標準で入ってるらしい
+`brew install --cask visual-studio-code`でVSCodeをinstall  
+`brew install --cask google-chrome`でChromeをinstall  
+`brew install --cask bitwarden`でbitwardenをinstall(利用している場合)  
 
+#### VSCodeをセットアップ
+設定を同期、自分は拡張機能の`Settings Sync`を使って設定をimportした  
+- 最近VSCodeの公式で[Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync)が出たらしいのでこっちを使うべき
+  - GistやTokenを用意する必要もなくGithubアカウントで共有できるっぽい
+
+#### ターミナルを使いたくないので`hyper`を使いたい
+`brew install --cask hyper`でinstall  
+`hyper`の設定を弄る、  
+上記メニューより`Hyper > Preferences`を選択し、`.hyper.js`を編集する(多分VSCodeで開かれる)  
+日本語が文字化けする可能性があるので`env`を指定  
+
+```js:hyper.js
+env: {
+  LANG: "ja_JP.UTF-8",
+  LC_ALL: "ja_JP.UTF-8"
+}
 ```
-$ brew install git
+
+環境によるかもしれないが、一行目に`%`が表示される場合は、`.zshrc`に`unsetopt PROMPT_SP`を記述して消す  
+##### `plugins`にinstallしたい物を記述(*`hyper i ○○`でもいい)  
+自分の場合、下記を追加  
+
+```js:hyper.js
+plugins: [
+  "hyper-statusline",
+  "hyper-search",
+  "hyper-opacity",
+  "hyper-tab-icons-plus",
+  "hyper-iceberg"
+]
 ```
+`config`内にopacityを指定(オタクは半透明が好き)  
 
-### anyenv
-
-- https://github.com/anyenv/anyenv
-- 様々な `**env` 系ツールをまとめて管理する
-
+```js:hyper.js
+config: {
+  opacity: 0.9
+}
 ```
-$ brew install anyenv
-$ anyenv init
-$ echo 'eval "$(anyenv init -) >> ~/.zshrc
-$ exec $SHELL -l
+テーマはicebergを使うが、そのうち自作する  
+`hyper-tab-icons-plus`の設定の為に`.zshrc`を編集する  
+```sh
+title() { export TITLE_OVERRIDDEN=1; echo -en "\e]0;$*\a"}
+autotitle() { export TITLE_OVERRIDDEN=0 }; autotitle
+overridden() { [[ $TITLE_OVERRIDDEN == 1 ]]; }
+gitDirty() { [[ $(git status 2> /dev/null | grep -o '\w\+' | tail -n1) != ("clean"|"") ]] && echo "*" }
+ 
+precmd() {
+   pwd=$(pwd)
+   cwd=${pwd##*/}
+   print -Pn "\e]0;$cwd\a"
+}
+ 
+preexec() {
+   printf "\033]0;%s\a" "${1%% *} | $cwd"
+}
 ```
-
-### anyenv-update
-- https://github.com/znz/anyenv-update
-- `**env` 系ツールを一括アップデートするプラグイン
-
+上記を追記、hyperを再起動すると反映される  
+ただこのパッケージも最終更新が３年前だったりするので変えたい  
+  
+#### 忘れていたMacbook自体の設定をしていく(好みの問題でもある)
+##### コマンドからしか設定できないやつ　
+- 隠しファイルを表示  
+  - `defaults write com.apple.finder AppleShowAllFiles -boolean true`
+- 共有フォルダで .DS_Store ファイルを作成しない  
+  - `defaults write com.apple.desktopservices DSDontWriteNetworkStores true`
+- Dockが表示/非表示になる時間を0.15秒にする  
+  - `defaults write com.apple.dock autohide-time-modifier -float 0.15;killall Dock`
+- マウスを画面端に持っていってからDockが表示されるまでの待ち時間を0秒にする  
+  - `defaults write com.apple.dock autohide-delay -float 0;killall Dock`
+  
+##### その他の細かい設定  
+  
+ここら辺に書く  
+  
+#### `nodenv`や`pyenv`を使う為に`anyenv`をinstallする  
+`brew install anyenv`でinstall  
+`anyenv init`をし、pathを通すのに`.zshrc`に追記  
+```sh
+if [ -e "$HOME/.anyenv" ]
+then
+    export ANYENV_ROOT="$HOME/.anyenv"
+    export PATH="$ANYENV_ROOT/bin:$PATH"
+    if command -v anyenv 1>/dev/null 2>&1
+    then
+        eval "$(anyenv init -)"
+    fi
+fi
 ```
+`exec $SHELL -l`後に、`anyenv -v`でバージョンが出るか確認  
+pluguinsをinstallしていく為にフォルダを作る  
+```sh
 $ mkdir -p $(anyenv root)/plugins
-$ git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 ```
-
-### anyenv-git
-
-- https://github.com/znz/anyenv-git
-
-
-### nodenv
-
-- https://github.com/nodenv/nodenv
-- 複数のNode.jsのバージョンを管理する
-- ローカルでのバージョンの切り替えが楽
-
+anyenv-updateをinstall  
+```sh
+$ git clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-git
 ```
-$ anyenv install nodenv
-$ exec $SHELL -l
+anyenv-gitをinstall  
+```sh
+$ it clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-git
 ```
-
-### pyenv
-
-- 複数のPythonのバージョンを管理する
-
+使い方は調べよう  
+  
+##### `nodenv`をinstallする  
+`anyenv install nodenv`でinstall、`exec $SHELL -l`、`nodenv -v`で確認  
+pluguinsをinstallしていく為にフォルダを作る  
+```sh
+$ mkdir -p "$(nodenv root)/plugins"
 ```
-$ anyenv install pyenv
-$ exec $SHELL -l
+nodenv-default-packages  
+```sh
+$ git clone https://github.com/nodenv/nodenv-default-packages.git "$(nodenv root)/plugins/nodenv-default-packages"
 ```
-
-### gibo
-
-- .gitignore作成の補助
-
+`touch $(nodenv root)/default-packages`でファイルを作成  
+```default-packages
+yarn
+vercel
+gitmoji-cli
 ```
-$ brew install gibo
+こんな感じに`default-packages`にパッケージ名を書くことで`nodenv`で新しいバージョンの`node`をinstallする際にそのパッケージもinstallしてくれる  
+基本npxでinstallしなくていいから何をinstallすればいいか思いつかない  
+既に追加しているバージョンにもinstallしたいときは  
+`nodenv default-packages install <version>`でできる、全てにinstallしたいときは`--all`  
+`Node.js`の最新の推奨版である14.15.3をinstallし、設定  
+```sh
+$ nodenv install 14.15.3
+$ nodenv global 14.15.3
 ```
-
-### jq
-
-- json整形
-
+`nodenv install -l`でinstall可能なバージョンを確認できる  
+`nodenv local <version>`でディレクトリ内で利用するnodeのバージョンを選択できる  
+  
+##### `pyenv`をinstallする  
+`anyenv install pyenv`でinstall、`exec $SHELL -l`、`pyenv -v`で確認  
+Pythonはバージョンを頻繁に変えることになりそう、とりあえず3.7.9をいれる  
+```sh
+$ pyenv install 3.7.9
+$ pyenv grobal 3.7.9
 ```
-$ brew install jq
+`pyenv install -l`でinstall可能なバージョンを確認できる  
+`pyenv local <version>`でディレクトリ内で利用するpythonのバージョンを選択できる  
+  
+#### 使いそうなツールをinstall  
+##### 使いそうなCLIツールをinstall  
+- gibo
+  - .gitignore作成の補助
+  - `brew install gibo`
+- jq
+  - json整形
+  - `brew install jq`
+- curl
+  - HTTPリクエスト
+  - `brew install curl`
+- ngrok
+  - local環境の外部公開
+  - `brew install ngrok`
+
+##### そのうち使いそうなGUIツールをinstall
+- Docker for Mac
+  - あれ
+  - `brew install --cask docker`
+- Slack
+  - あれ
+  - `brew install --cask slack`
+
+#### ariasの設定をする
+```sh
+alias n='npm'
+alias nr='npm run'
+alias y='yarn'
+ 
+alias p='python'
+ 
+alias gitignore="touch .gitignore && gibo dump Node VisualStudioCode macOS >> .gitignore"
+alias g='git'
+alias gc='gitmoji -c'
+alias gp='git push'
+ 
+alias d='docker-compose'
+ 
+alias c='code'
+alias o="open"
+alias www='open "/Applications/Google Chrome.app" --args --enable-xss-auditor'
+alias s="source"
+alias v="vim"
 ```
-
-### npm
-
-- デフォルトでinstall されてそう
-```
-$ brew install npm
-```
-
-### yarn
-
-- 個人開発は基本的にyarnを使う
-- `--ignore-dependencies`をつけておくと、複数nodeの依存関係を無視させることができる。
-
-```
-brew install yarn --ignore-dependencies
-```
-
-### GUI tool
-### Visual Studio Code
-
-- エディター
-
-```
-$ brew cask install visual-studio-code
-```
-
-- install 後にsetting sync で設定をダウンロード
-- id/token はbitwarden で管理
-- [VScodeの設定共有（SettingSync）](https://qiita.com/torun225/items/e6823fc22e5ae79247fe)
-
-### Chrome
-
-- ブラウザ
-- https://www.google.com/intl/ja_jp/chrome
-
-```
-$ brew cask install google-chrome
-```
-
-### Postman
-
-- API開発のためのコラボレーションプラットフォーム
-- https://www.postman.com/postman
-
-```
-$ brew cask install postman
-```
-
-### Docker for Mac
-
-- コンテナ仮想化プラットフォーム
-- https://docs.docker.com
-
-```
-$ brew cask install docker
-```
-
-### Slack
-
-- https://slack.com/intl/ja-jp
-
-```
-$ brew cask install slack
-```
-
-### bitwarden
-
-- https://bitwarden.com/
-- パスワードマネージャー
-- brew でinstall する必要はない
-
-```
-$ brew cask install bitwarden
-```
-
-## NPM Package
-
-- global package は基本npm (深い意味は無い)
-- 基本`npx **`で呼べばいいのでよっぽど頻繁に使うもの以外はinstall しない
-
-### gitmoji-cli
-
-- 個人開発のcommit は基本絵文字をつける
-  - 見栄えがいいので
-
-```
-npm install -g gitmoji-cli
-```
-
-## ssh設定
-
-- `ssh-keygen`で鍵を作り、github に登録
-

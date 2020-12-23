@@ -1,5 +1,21 @@
 # PATH
-export PATH=/usr/local/git/bin:$PATH
+# Preztoの読み込み
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+#anyenvの読み込み
+if [ -e "$HOME/.anyenv" ]
+then
+    export ANYENV_ROOT="$HOME/.anyenv"
+    export PATH="$ANYENV_ROOT/bin:$PATH"
+    if command -v anyenv 1>/dev/null 2>&1
+    then
+        eval "$(anyenv init -)"
+    fi
+fi
+
+unsetopt PROMPT_SP
 
 # npm
 alias n='npm'
