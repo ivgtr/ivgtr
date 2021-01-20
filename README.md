@@ -4,6 +4,8 @@
 
 We're Geeks who consume content. 🐳
 
+[![badge](https://twitter-profile-card.ivgtr.vercel.app/api?id=ivgtr)](https://twitter.com/iVgtr)
+
 <p align="right">
-  <em>Updated 05/Nov/2020</em>
+  <em>Updated 20/Jan/2021</em>
 </p>
