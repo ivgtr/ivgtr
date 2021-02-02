@@ -1,6 +1,6 @@
 # @iVgtr 
 
-[![counter](https://t-point-counter.glitch.me/count.svg)](https://t-point-counter.glitch.me/count.svg)
+[![](https://t-point-counter.glitch.me/count.svg)](https://t-point-counter.glitch.me/count.svg)
 
 I L♡ve JavaScript, and building something in Javascript.
 
