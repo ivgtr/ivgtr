@@ -6,3 +6,11 @@
     </picture>
   </a>
 </p>
+
+<p align="center">
+  <samp>
+    user-name: ivgtr<br>
+    language: TypeScript / JavaScript<br>
+    like: image / interactive / game
+  </samp>
+</p>
