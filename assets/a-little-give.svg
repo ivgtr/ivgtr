@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="230" viewBox="0 0 480 230" role="img" aria-labelledby="title description">
+  <title id="title">A little give</title>
+  <desc id="description">One dot weighs down a thin line, which springs back and sends the dot to its starting point.</desc>
+  <!-- Self-contained: no scripts, external images, fonts, or network requests. -->
+  <style>
+    :root { --ink: #59636e; --soft: #d6dce2; --paper: #ffffff; --accent: #bd8051; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #b4bec8; --soft: #333e49; --paper: #0d1117; --accent: #d7a778; }
+    }
+    .ink { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .soft { fill: none; stroke: var(--soft); stroke-width: 1; stroke-linecap: round; }
+    .paper { fill: var(--paper); }
+    .solid { fill: var(--ink); }
+    .accent { fill: var(--accent); }
+    .thread { transform-origin: 0px 130px; transform: scaleY(.02); animation: tension 10s ease-in-out infinite; }
+    .bead { transform: translate(120px, 126px); animation: bounce 10s linear infinite; }
+    @keyframes tension {
+      0%, 66%, 100% { transform: scaleY(.02); }
+      6% { transform: scaleY(.18); }
+      14% { transform: scaleY(.6); }
+      24% { transform: scaleY(.98); }
+      32%, 38% { transform: scaleY(1); }
+      41% { transform: scaleY(-.2); }
+      45% { transform: scaleY(.13); }
+      49% { transform: scaleY(-.07); }
+      53% { transform: scaleY(.03); }
+      57% { transform: scaleY(-.015); }
+      61% { transform: scaleY(.04); }
+    }
+    @keyframes bounce {
+      0%, 66%, 100% { transform: translate(120px, 126px); }
+      6% { transform: translate(136px, 128px); }
+      14% { transform: translate(175px, 143px); }
+      24% { transform: translate(220px, 164px); }
+      32%, 38% { transform: translate(240px, 166px); }
+      41% { transform: translate(232px, 119px); }
+      45% { transform: translate(210px, 65px); }
+      49% { transform: translate(185px, 47px); }
+      53% { transform: translate(160px, 57px); }
+      57% { transform: translate(138px, 86px); }
+      61% { transform: translate(120px, 126px); }
+      63% { transform: translate(113px, 116px); }
+    }
+    /* Keep the initial, fully drawn scene when motion is reduced. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+  <path class="thread ink" d="M120 130Q240 210 360 130" vector-effect="non-scaling-stroke"/>
+  <circle class="solid" cx="120" cy="130" r="1.8"/>
+  <circle class="solid" cx="360" cy="130" r="1.8"/>
+  <g class="bead"><circle class="accent" r="4"/></g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="230" viewBox="0 0 480 230" role="img" aria-labelledby="title description">
+  <title id="title">A little give</title>
+  <desc id="description">One dot weighs down a thin line, which springs back and sends the dot to its starting point.</desc>
+  <!-- Static companion for reduced motion; initial frame of a-little-give.svg. -->
+  <style>
+    :root { --ink: #59636e; --soft: #d6dce2; --paper: #ffffff; --accent: #bd8051; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #b4bec8; --soft: #333e49; --paper: #0d1117; --accent: #d7a778; }
+    }
+    .ink { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .soft { fill: none; stroke: var(--soft); stroke-width: 1; stroke-linecap: round; }
+    .paper { fill: var(--paper); }
+    .solid { fill: var(--ink); }
+    .accent { fill: var(--accent); }
+    .thread { transform-origin: 0px 130px; transform: scaleY(.02); }
+    .bead { transform: translate(120px, 126px); }
+  </style>
+  <path class="thread ink" d="M120 130Q240 210 360 130" vector-effect="non-scaling-stroke"/>
+  <circle class="solid" cx="120" cy="130" r="1.8"/>
+  <circle class="solid" cx="360" cy="130" r="1.8"/>
+  <g class="bead"><circle class="accent" r="4"/></g>
+</svg>
