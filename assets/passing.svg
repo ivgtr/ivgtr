@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="230" viewBox="0 0 480 230" role="img" aria-labelledby="title description">
+  <title id="title">Passing</title>
+  <desc id="description">A quiet railway crossing. A train passes, the gate opens, and someone continues on their way.</desc>
+  <!-- Self-contained: no scripts, external images, fonts, or network requests. -->
+  <style>
+    :root { --ink: #59636e; --soft: #d6dce2; --paper: #ffffff; --accent: #bd8051; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #b4bec8; --soft: #333e49; --paper: #0d1117; --accent: #d7a778; }
+    }
+    .ink { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .soft { fill: none; stroke: var(--soft); stroke-width: 1; stroke-linecap: round; }
+    .paper { fill: var(--paper); }
+    .solid { fill: var(--ink); }
+    .accent { fill: var(--accent); }
+    .train { transform: translateX(-210px); animation: passing 16s linear infinite; }
+    .gate { transform: rotate(-82deg); animation: gate 16s ease-in-out infinite; }
+    .signal { opacity: 0; animation: signal 16s steps(1, end) infinite; }
+    .lamp-left { animation: left-light 1.6s steps(1, end) infinite; }
+    .lamp-right { animation: right-light 1.6s steps(1, end) infinite; }
+    .walker { transform: translateY(0); animation: walk 16s linear infinite; }
+    @keyframes passing {
+      0%, 22% { transform: translateX(-210px); }
+      59%, 100% { transform: translateX(490px); }
+    }
+    @keyframes gate {
+      0%, 9%, 76%, 100% { transform: rotate(-82deg); }
+      19%, 65% { transform: rotate(0deg); }
+    }
+    @keyframes signal { 0%, 72%, 100% { opacity: 0; } 5% { opacity: 1; } }
+    @keyframes left-light { 0%, 100% { opacity: .9; } 50% { opacity: .12; } }
+    @keyframes right-light { 0%, 100% { opacity: .12; } 50% { opacity: .9; } }
+    @keyframes walk {
+      0%, 76% { transform: translateY(0); opacity: 1; }
+      90% { transform: translateY(-69px); opacity: 1; }
+      92%, 98% { transform: translateY(-76px); opacity: 0; }
+      99%, 100% { transform: translateY(0); opacity: 1; }
+    }
+    /* Keep the initial, fully drawn scene when motion is reduced. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+  <defs><clipPath id="landscape"><rect x="38" y="38" width="404" height="163"/></clipPath></defs>
+  <g clip-path="url(#landscape)">
+    <path class="soft" d="M43 140H219M277 140H437M227 193L237 94M277 193L266 94"/>
+    <path class="soft" d="M81 140V71M388 140V61M72 78H90M379 68H397M82 76Q222 102 388 66"/>
+    <path class="soft" d="M61 138L58 134M63 138L65 132M339 138L341 134M345 138L346 131"/>
+    <g class="soft"><path d="M47 148V159"/><path d="M61 148V159"/><path d="M75 148V159"/><path d="M89 148V159"/><path d="M103 148V159"/><path d="M117 148V159"/><path d="M131 148V159"/><path d="M145 148V159"/><path d="M159 148V159"/><path d="M173 148V159"/><path d="M187 148V159"/><path d="M201 148V159"/><path d="M215 148V159"/><path d="M229 148V159"/><path d="M243 148V159"/><path d="M257 148V159"/><path d="M271 148V159"/><path d="M285 148V159"/><path d="M299 148V159"/><path d="M313 148V159"/><path d="M327 148V159"/><path d="M341 148V159"/><path d="M355 148V159"/><path d="M369 148V159"/><path d="M383 148V159"/><path d="M397 148V159"/><path d="M411 148V159"/><path d="M425 148V159"/></g>
+    <path class="ink" d="M41 150H439M41 157H439"/>
+    <path class="soft" d="M232 148H272M231 159H273"/>
+    <g class="walker solid"><circle cx="251" cy="183" r="2.4"/><path d="M249 186H253L254 192H248Z"/></g>
+    <g class="train">    <g transform="translate(0 0)">
+      <path class="ink paper" d="M0 137V115Q0 109 6 109H78L86 120V139H0Z"/>
+      <path class="soft" d="M7 112H72M1 128H84M16 141H69"/>
+      <path d="M1 132H84" stroke="var(--accent)" stroke-width="3"/>
+      <rect class="ink paper" x="10" y="116" width="12" height="22" rx="1"/>
+      <path class="soft" d="M16 116V138"/>
+      <rect class="ink" x="29" y="116" width="13" height="8" rx="1"/>
+      <rect class="ink" x="48" y="116" width="13" height="8" rx="1"/>
+      <path class="ink" d="M70 115H77L82 123H70Z"/>
+      <circle class="solid" cx="14" cy="142" r="3"/>
+      <circle class="solid" cx="68" cy="142" r="3"/>
+    </g>    <g transform="translate(93 0)">
+      <path class="ink paper" d="M0 137V115Q0 109 6 109H78L86 120V139H0Z"/>
+      <path class="soft" d="M7 112H72M1 128H84M16 141H69"/>
+      <path d="M1 132H84" stroke="var(--accent)" stroke-width="3"/>
+      <rect class="ink paper" x="10" y="116" width="12" height="22" rx="1"/>
+      <path class="soft" d="M16 116V138"/>
+      <rect class="ink" x="29" y="116" width="13" height="8" rx="1"/>
+      <rect class="ink" x="48" y="116" width="13" height="8" rx="1"/>
+      <path class="ink" d="M70 115H77L82 123H70Z"/>
+      <circle class="solid" cx="14" cy="142" r="3"/>
+      <circle class="solid" cx="68" cy="142" r="3"/>
+    </g>
+      <path class="ink" d="M86 136H93"/>
+    </g>
+    <path class="ink" d="M207 174V104M202 174H212"/>
+    <path class="ink" d="M201 95L213 103M201 103L213 95"/>
+    <rect class="ink paper" x="196" y="108" width="22" height="9" rx="4.5"/>
+    <circle class="soft" cx="202" cy="112.5" r="2.5"/>
+    <circle class="soft" cx="212" cy="112.5" r="2.5"/>
+    <g class="signal accent">
+      <circle class="lamp-left" cx="202" cy="112.5" r="2.5"/>
+      <circle class="lamp-right" cx="212" cy="112.5" r="2.5"/>
+    </g>
+    <rect class="ink paper" x="213" y="145" width="10" height="29" rx="2"/>
+    <g transform="translate(218 146)">
+      <g class="gate">
+        <path d="M0 0H76" stroke="var(--paper)" stroke-width="5"/>
+        <path d="M0 0H76" stroke="var(--ink)" stroke-width="4"/>
+        <path d="M0 0H76" stroke="var(--accent)" stroke-width="4" stroke-dasharray="7 7"/>
+      </g>
+      <circle class="ink paper" r="3"/>
+    </g>
+    <path class="soft" d="M182 182H223M287 180H306"/>
+  </g>
+</svg>
