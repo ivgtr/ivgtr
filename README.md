@@ -1,16 +1,8 @@
-<div align="center">
-
-![ivgtr](https://glitch-image.vercel.app/api?text=寿司食わないと死ぬぜ！)
-
-🐳 < インターネットと寿司が好きです
-
-</div>
-
-
----
-
-<div align="center">
-
-[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%20🍣-blue.svg)](./LICENSE.🍣.md)
-
-</div>
+<p align="center">
+  <a href="./assets/again.svg">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/again.still.svg">
+      <img src="./assets/again.svg" width="400" alt="粒を並べる小さな装置。クリックでSVGのソースを開きます。">
+    </picture>
+  </a>
+</p>

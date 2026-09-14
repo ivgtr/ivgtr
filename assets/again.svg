@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="230" viewBox="0 0 480 230" role="img" aria-labelledby="title description">
+  <title id="title">Again</title>
+  <desc id="description">A little crane lines up four blocks, presses a plunger, and scatters them again.</desc>
+  <!-- Self-contained: no scripts, external images, fonts, or network requests. -->
+  <style>
+    :root { --ink: #59636e; --soft: #d6dce2; --paper: #ffffff; --accent: #bd8051; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #b4bec8; --soft: #333e49; --paper: #0d1117; --accent: #d7a778; }
+    }
+    .ink { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .soft { fill: none; stroke: var(--soft); stroke-width: 1; stroke-linecap: round; }
+    .paper { fill: var(--paper); }
+    .solid { fill: var(--ink); }
+    .accent { fill: var(--accent); }
+    .carriage { transform: translateX(140px); animation: travel 14s ease-in-out infinite; }
+    .head { transform: translateY(100px); animation: lower 14s ease-in-out infinite; }
+    .cable { transform-origin: 0px 56px; transform: scaleY(.44); animation: cable 14s ease-in-out infinite; }
+    .block { fill: var(--accent); animation-duration: 14s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    .tray { transform-origin: 250px 176px; animation: tip 14s ease-in-out infinite; }
+    .plunger { animation: press 14s ease-in-out infinite; }
+    .jaw-left { animation: grip-left 14s linear infinite; }
+    .jaw-right { animation: grip-right 14s linear infinite; }
+    @keyframes travel {
+      0%, 3%, 96%, 100% { transform: translateX(140px); }
+      4%, 7%, 9%, 12% { transform: translateX(180px); }
+      16%, 19%, 21% { transform: translateX(230px); }
+      24%, 27%, 29%, 32% { transform: translateX(213px); }
+      36%, 39%, 41% { transform: translateX(250px); }
+      44%, 47%, 49%, 52% { transform: translateX(330px); }
+      56%, 59%, 61% { transform: translateX(270px); }
+      64%, 67%, 69%, 72% { transform: translateX(305px); }
+      76%, 79%, 81% { transform: translateX(290px); }
+      84%, 86%, 88%, 90% { transform: translateX(350px); }
+    }
+    @keyframes lower {
+      0%, 3%, 4%, 12%, 16%, 21%, 24%, 32%, 36%, 41%, 44%, 52%, 56%, 61%, 64%, 72%, 76%, 81%, 84%, 90%, 96%, 100% { transform: translateY(100px); }
+      7%, 9%, 19%, 27%, 29%, 39%, 47%, 49%, 59%, 67%, 69%, 79% { transform: translateY(149px); }
+      86% { transform: translateY(150px); }
+      88% { transform: translateY(156px); }
+    }
+    @keyframes cable {
+      0%, 3%, 4%, 12%, 16%, 21%, 24%, 32%, 36%, 41%, 44%, 52%, 56%, 61%, 64%, 72%, 76%, 81%, 84%, 90%, 96%, 100% { transform: scaleY(0.44); }
+      7%, 9%, 19%, 27%, 29%, 39%, 47%, 49%, 59%, 67%, 69%, 79% { transform: scaleY(0.93); }
+      86% { transform: scaleY(0.94); }
+      88% { transform: scaleY(1.00); }
+    }
+    @keyframes grip-left {
+      0%, 100% { transform: translateX(0); }
+      7%, 20% { transform: translateX(0); }
+      8%, 19% { transform: translateX(3px); }
+      27%, 40% { transform: translateX(0); }
+      28%, 39% { transform: translateX(3px); }
+      47%, 60% { transform: translateX(0); }
+      48%, 59% { transform: translateX(3px); }
+      67%, 80% { transform: translateX(0); }
+      68%, 79% { transform: translateX(3px); }
+    }
+    @keyframes grip-right {
+      0%, 100% { transform: translateX(0); }
+      7%, 20% { transform: translateX(0); }
+      8%, 19% { transform: translateX(-3px); }
+      27%, 40% { transform: translateX(0); }
+      28%, 39% { transform: translateX(-3px); }
+      47%, 60% { transform: translateX(0); }
+      48%, 59% { transform: translateX(-3px); }
+      67%, 80% { transform: translateX(0); }
+      68%, 79% { transform: translateX(-3px); }
+    }
+    @keyframes tip {
+      0%, 87%, 97%, 100% { transform: rotate(0deg); }
+      89% { transform: rotate(5deg); }
+      91% { transform: rotate(-13deg); }
+      94% { transform: rotate(2deg); }
+    }
+    @keyframes press {
+      0%, 86%, 90%, 100% { transform: translateY(0); }
+      88% { transform: translateY(5px); }
+    }
+    .b0 { transform: translate(180px, 164px) rotate(12deg); animation-name: block-0; }
+    @keyframes block-0 {
+      0%, 7% { transform: translate(180px, 164px) rotate(12deg); }
+      9% { transform: translate(180px, 164px) rotate(0deg); }
+      12% { transform: translate(180px, 115px) rotate(0deg); }
+      16% { transform: translate(230px, 115px) rotate(0deg); }
+      19%, 89% { transform: translate(230px, 164px) rotate(0deg); }
+      91% { transform: translate(212.5px, 119px) rotate(-43deg); }
+      93% { transform: translate(180px, 142px) rotate(42deg); }
+      95% { transform: translate(180px, 164px) rotate(12deg); }
+      96% { transform: translate(180px, 159px) rotate(7deg); }
+      97%, 100% { transform: translate(180px, 164px) rotate(12deg); }
+    }
+    .b1 { transform: translate(213px, 164px) rotate(-18deg); animation-name: block-1; }
+    @keyframes block-1 {
+      0%, 27% { transform: translate(213px, 164px) rotate(-18deg); }
+      29% { transform: translate(213px, 164px) rotate(0deg); }
+      32% { transform: translate(213px, 115px) rotate(0deg); }
+      36% { transform: translate(250px, 115px) rotate(0deg); }
+      39%, 89% { transform: translate(250px, 164px) rotate(0deg); }
+      91% { transform: translate(237.1px, 111px) rotate(-73deg); }
+      93% { transform: translate(213px, 139px) rotate(12deg); }
+      95% { transform: translate(213px, 164px) rotate(-18deg); }
+      96% { transform: translate(213px, 159px) rotate(-23deg); }
+      97%, 100% { transform: translate(213px, 164px) rotate(-18deg); }
+    }
+    .b2 { transform: translate(330px, 164px) rotate(18deg); animation-name: block-2; }
+    @keyframes block-2 {
+      0%, 47% { transform: translate(330px, 164px) rotate(18deg); }
+      49% { transform: translate(330px, 164px) rotate(0deg); }
+      52% { transform: translate(330px, 115px) rotate(0deg); }
+      56% { transform: translate(270px, 115px) rotate(0deg); }
+      59%, 89% { transform: translate(270px, 164px) rotate(0deg); }
+      91% { transform: translate(291.0px, 103px) rotate(-37deg); }
+      93% { transform: translate(330px, 136px) rotate(48deg); }
+      95% { transform: translate(330px, 164px) rotate(18deg); }
+      96% { transform: translate(330px, 159px) rotate(13deg); }
+      97%, 100% { transform: translate(330px, 164px) rotate(18deg); }
+    }
+    .b3 { transform: translate(305px, 164px) rotate(-10deg); animation-name: block-3; }
+    @keyframes block-3 {
+      0%, 67% { transform: translate(305px, 164px) rotate(-10deg); }
+      69% { transform: translate(305px, 164px) rotate(0deg); }
+      72% { transform: translate(305px, 115px) rotate(0deg); }
+      76% { transform: translate(290px, 115px) rotate(0deg); }
+      79%, 89% { transform: translate(290px, 164px) rotate(0deg); }
+      91% { transform: translate(295.2px, 95px) rotate(-65deg); }
+      93% { transform: translate(305px, 133px) rotate(20deg); }
+      95% { transform: translate(305px, 164px) rotate(-10deg); }
+      96% { transform: translate(305px, 159px) rotate(-15deg); }
+      97%, 100% { transform: translate(305px, 164px) rotate(-10deg); }
+    }
+    /* Keep the initial, fully drawn scene when motion is reduced. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+  <path class="soft" d="M78 208H399"/>
+  <path class="ink" d="M106 204V54H368M112 204V60H368"/>
+  <path class="soft" d="M119 57H360"/>
+  <path class="ink" d="M94 205H122M194 183V204M306 183V204M185 205H204M297 205H317"/>
+  <path class="soft" d="M197 190H303"/>
+  <g class="tray ink paper">
+    <path d="M153 169V177H338V169M157 177H334"/>
+    <circle cx="250" cy="180" r="2"/>
+  </g>
+  <path class="ink paper" d="M343 178V172H357V178Z"/>
+  <g class="plunger"><path class="ink" d="M350 166V173"/><path class="ink" d="M345 165H355"/></g>
+  <g class="block b0"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="block b1"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="block b2"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="block b3"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="carriage">
+    <path class="cable ink" d="M0 56V156"/>
+    <rect class="ink paper" x="-10" y="48" width="20" height="15" rx="3"/>
+    <circle class="solid" cx="-5" cy="54" r="1"/>
+    <circle class="solid" cx="5" cy="54" r="1"/>
+    <g class="head ink">
+      <rect class="paper" x="-6" y="-4" width="12" height="8" rx="1"/>
+      <path class="jaw-left" d="M-6 4L-9 10V16H-5"/>
+      <path class="jaw-right" d="M6 4L9 10V16H5"/>
+    </g>
+  </g>
+</svg>

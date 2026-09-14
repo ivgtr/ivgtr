@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="230" viewBox="0 0 480 230" role="img" aria-labelledby="title description">
+  <title id="title">Again</title>
+  <desc id="description">A little crane lines up four blocks, presses a plunger, and scatters them again.</desc>
+  <!-- Static companion for reduced motion; initial frame of again.svg. -->
+  <style>
+    :root { --ink: #59636e; --soft: #d6dce2; --paper: #ffffff; --accent: #bd8051; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #b4bec8; --soft: #333e49; --paper: #0d1117; --accent: #d7a778; }
+    }
+    .ink { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .soft { fill: none; stroke: var(--soft); stroke-width: 1; stroke-linecap: round; }
+    .paper { fill: var(--paper); }
+    .solid { fill: var(--ink); }
+    .accent { fill: var(--accent); }
+    .carriage { transform: translateX(140px); }
+    .head { transform: translateY(100px); }
+    .cable { transform-origin: 0px 56px; transform: scaleY(.44); }
+    .block { fill: var(--accent); }
+    .tray { transform-origin: 250px 176px; }
+    .b0 { transform: translate(180px, 164px) rotate(12deg); }
+    .b1 { transform: translate(213px, 164px) rotate(-18deg); }
+    .b2 { transform: translate(330px, 164px) rotate(18deg); }
+    .b3 { transform: translate(305px, 164px) rotate(-10deg); }
+  </style>
+  <path class="soft" d="M78 208H399"/>
+  <path class="ink" d="M106 204V54H368M112 204V60H368"/>
+  <path class="soft" d="M119 57H360"/>
+  <path class="ink" d="M94 205H122M194 183V204M306 183V204M185 205H204M297 205H317"/>
+  <path class="soft" d="M197 190H303"/>
+  <g class="tray ink paper">
+    <path d="M153 169V177H338V169M157 177H334"/>
+    <circle cx="250" cy="180" r="2"/>
+  </g>
+  <path class="ink paper" d="M343 178V172H357V178Z"/>
+  <g class="plunger"><path class="ink" d="M350 166V173"/><path class="ink" d="M345 165H355"/></g>
+  <g class="block b0"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="block b1"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="block b2"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="block b3"><rect x="-4" y="-4" width="8" height="8" rx="1"/></g>
+  <g class="carriage">
+    <path class="cable ink" d="M0 56V156"/>
+    <rect class="ink paper" x="-10" y="48" width="20" height="15" rx="3"/>
+    <circle class="solid" cx="-5" cy="54" r="1"/>
+    <circle class="solid" cx="5" cy="54" r="1"/>
+    <g class="head ink">
+      <rect class="paper" x="-6" y="-4" width="12" height="8" rx="1"/>
+      <path class="jaw-left" d="M-6 4L-9 10V16H-5"/>
+      <path class="jaw-right" d="M6 4L9 10V16H5"/>
+    </g>
+  </g>
+</svg>
