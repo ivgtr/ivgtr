@@ -1,16 +1,14 @@
-<div align="center">
+<p align="">
+  <a href="https://github.com/ivgtr/glitch-image">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="https://github.com/ivgtr.png">
+      <img src="https://glitch-image.vercel.app/api?seed=429636&url=https://crop-icon.vercel.app/api?url=https://github.com/ivgtr.png" width="100" alt="ivgtr">
+    </picture>
+  </a>
+</p>
 
-![ivgtr](https://glitch-image.vercel.app/api?text=寿司食わないと死ぬぜ！)
+Hello, 你好, こんにちは, გამარჯობა
 
-🐳 < インターネットと寿司が好きです
-
-</div>
-
-
----
-
-<div align="center">
-
-[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%20🍣-blue.svg)](./LICENSE.🍣.md)
-
-</div>
+- Frontend engineer since 2020.
+- Exploring images, sound, and browser games.
+- Contact me on X.
